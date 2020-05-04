@@ -1,0 +1,225 @@
+body {
+	background-image: url("./mathbackground-1.png");
+	background-size: cover;
+  	background-position: center;
+	margin: 0;
+}
+
+header {
+	background-color:  #EDE000;
+	margin: 0;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+  	position: fixed;
+  	top: 0;
+  	width: 100%;
+  	z-index: 1000;
+}
+
+header h1 {
+	font-family: Arial, sans-serif;
+	font-size: 3em;
+	margin: auto;
+}
+
+main {
+	width: 50%;
+	height: 100%;
+ 	margin: 120px auto 110px auto;
+ 	border-radius: 5px;
+ 	background-color: #666;
+ 	overflow: hidden;
+ 	font-family: sans-serif;
+}
+
+main div#wrapper {
+	width: 85%;
+	margin: 20px auto;
+	padding: 30px;
+	background-color: #ffe;
+	border-radius: 5px;
+}
+
+main div#foobar-container {
+	margin-top: 20px;
+}
+
+main div#foobar-container table {
+	width: 50%;
+	margin: 10px auto;
+}
+
+main div#foobar-container table,
+main div#foobar-container table th, 
+main div#foobar-container table td {
+	border: 1px solid #666;
+	border-collapse: collapse;
+}
+
+main div#foobar-container table th, 
+main div#foobar-container table td {
+	text-align: center;
+}
+
+main div#foobar-container table th {
+	background-color: #EDE000;
+	padding: 5px;
+}
+
+.position-column {
+	width: 60px;
+}
+
+main div#foobar-number input#number-entry {
+	border-color: #666;
+	border-radius: 3px;
+	height: 25px;
+  	padding: 5px 10px;
+}
+
+main div#foobar-number button#submit-btn {
+	display: inline-block;
+  	border: none;
+  	border-radius: 5px;
+  	padding: 10px;
+  	margin: 0 15px;
+  	text-decoration: none;
+  	background: #EDE000;
+  	color: #000;
+  	font-family: sans-serif;
+  	font-size: 1rem;
+  	line-height: 1;
+  	cursor: pointer;
+  	text-align: center;
+  	transition: background 250ms ease-in-out, transform 150ms ease;
+  	-webkit-appearance: none;
+  	-moz-appearance: none;
+ 	box-shadow: 5px 5px 10px #666;
+}
+
+main div#foobar-number button#submit-btn:hover,
+main div#foobar-number button#submit-btn:focus {
+    background: #666;
+    color: #fff;
+}
+
+main div#foobar-number button#submit-btn:focus {
+    outline: none;
+    box-shadow: 5px 5px 10px #666;
+}
+
+main div#foobar-number button#submit-btn:active {
+    transform: scale(0.99);
+}
+
+main div#foobar-container table tr.no-highlight {
+	background-color: #fff;
+}
+
+main div#foobar-container table tr.foobar {
+	background-color: #f4b516;
+}
+
+main div#foobar-container table tr.foo {
+	background-color:#f1f799;
+}
+
+main div#foobar-container table tr.bar {
+	background-color: #eff963;
+}
+
+footer {
+	background-color:  #EDE000;
+	height: 100px;
+	position: fixed;
+  	bottom: 0;
+  	width: 100%;
+  	z-index: 1000;
+}
+
+/* The Alert Box (background) */
+.alert {
+  	display: none;
+  	position: fixed;
+  	z-index: 1001;
+  	padding-top: 300px;
+  	left: 0;
+  	top: 0;
+  	width: 100%;
+  	height: 100%;
+  	overflow: auto;
+  	background-color: rgb(0,0,0); /* Fallback color */
+  	background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+}
+
+/* Alert Content */
+.alert-content {
+  	position: relative;
+  	background-color: #fefefe;
+  	margin: auto;
+  	padding: 0;
+  	border: 1px solid #888;
+  	border-radius:6px;
+  	width:400px;
+  	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  	-webkit-animation-name: animatetop;
+ 	-webkit-animation-duration: 0.4s;
+  	animation-name: animatetop;
+  	animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  	from {top:-300px; opacity:0} 
+  	to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  	from {top:-300px; opacity:0}
+  	to {top:0; opacity:1}
+}
+
+.alert-header {
+  	padding: 2px 16px;
+  	background-color: #ffaa2c;
+  	color: white;
+  	border-radius:5px 5px 0px 0px;
+  	text-align: center;
+}
+
+.alert-body {
+  	padding: 2px 16px;
+  	text-align: center;
+  	font-size: 18px;
+  	font-weight: bold;
+  	color: #ffaa2c;
+}
+
+.alert-footer {
+  	padding: 15px 16px;
+  	background-color: #ffaa2c;
+  	color: white;
+  	border-radius:0px 0px 5px 5px;
+  	text-align: center;
+}
+
+.alert-close {
+  	padding: 5px 15px;
+  	border-radius: 3px;
+  	border: 0;
+  	background-color: #fff;
+  	color: #ffaa2c;
+  	font-weight: bold;
+  	box-shadow: 5px 5px 10px #666;
+}
+
+.alert-close:hover {
+  	color: #000;
+  	text-decoration: none;
+  	cursor: pointer; 
+}
+
+.alert-close:focus {
+  	outline: none;
+}

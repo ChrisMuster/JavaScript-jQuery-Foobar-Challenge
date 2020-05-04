@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FooBar</title>
+		<link rel="stylesheet" href="./foobarStyle.css">	
+		<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+		<script src="foobar.js"></script>	
+	</head>
+	<body>
+
+		<header>
+			<h1>The Foobar Task</h1>
+		</header>
+
+		<main>
+			<div id="wrapper">
+				<div id="foobar-number">
+					<p><strong>The task:</strong> Enter in any number to count up to (although for demo purposes, to show it is working fully enter 15 or higher).<br/>
+							A list of numbers up to your choice will appear.<br/>
+							If a number is divisible by 3, the word "Foo" will appear instead of the number.<br/>
+							If a number is divisible by 5, the word "Bar" will appear instead of the number.<br/>
+							If the number is divisible by both 3 and 5, "FooBar" will appear instead of the number.<br/>
+							All other numbers will appear as normal.
+					</p>
+					<br/>
+ 
+					<input type="text" name="number" id="number-entry" placeholder="Enter number here">
+					<button id="submit-btn">Submit</button>
+				</div>
+
+				<div id="foobar-container"></div>
+			</div>
+ 
+		</main>
+
+		<footer></footer>
+  
+	    <!-- The Alert Box -->
+	    <div id="alertBox" class="alert">
+
+	      	<!-- Alert content -->
+	      	<div class="alert-content">
+	        	<div class="alert-header">
+	          		<h2>Reminder</h2>
+	        	</div>
+	        	<div class="alert-body">
+	          		<p>Your input must be a number greater than zero.</p>
+	        	</div>
+	        	<div class="alert-footer">
+	          		<button class="alert-close">OK</button>
+	        	</div>
+	      </div>
+
+		</div>
+
+	</body>
+
+</html>
