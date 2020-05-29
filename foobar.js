@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	//input box element
-    var fbInput = $("#number-entry");
+    var fbInput = $("input#number-entry");
 
     //Submit button element
     var subButton = $("#submit-btn");
@@ -16,16 +16,16 @@ $(document).ready(function(){
     var closeX = $("button.alert-close");
 
     //html to set up the table
-    var DefaultTableInterface = "<table>\
-						                            <thead>\
-						                              <tr>\
-						                                <th class='position-column'>Position</th>\
-						                                <th>FooBar List</th>\
-						                              <tr/>\
-						                            </thead>\
-						                            <tbody>\
-						                            </tbody>\
-						                        </table>";
+    var DefaultTableInterface = `<table>
+						                            <thead>
+						                              <tr>
+						                                <th class='position-column'>Position</th>
+						                                <th>FooBar List</th>
+						                              <tr/>
+						                            </thead>
+						                            <tbody>
+						                            </tbody>
+						                        </table>`;
 
 //**Functions to test if the number is divisible by 3, 5, or both***********
     function div_by_3(num) {
@@ -40,7 +40,7 @@ $(document).ready(function(){
     	return num % 15;
     }
 //************************************************************
-
+	fbInput.focus();
     //Submit button event handler
     subButton.on("click", function() {
 
@@ -50,7 +50,11 @@ $(document).ready(function(){
 	    //get number from the input box
 	    var listNumber = fbInput.val();
 	     
-	    if (listNumber === "0" || listNumber === "" || isNaN(listNumber)) { //if there is no number or it is zero, clear the container and input
+		//if there is no number or it is less than or equal to zero, clear the container and input
+	    if (listNumber === "0" || 
+			listNumber < "0" ||
+			listNumber === "" || 
+			isNaN(listNumber)) { 
 	    	container.empty();
 	        fbInput.val("");
 	        $(this).blur();
@@ -71,7 +75,9 @@ $(document).ready(function(){
 	        for (var n = 1; n <= listNumber; n++) {	//for every number up to and including the input number
 
 	        	//call the functions to check what the number can be divided by to determine the result
-	          	var result = div_by_3_and_5(n) === 0 ?  "FooBar" : div_by_3(n) === 0 ? "Foo" : div_by_5(n) === 0 ? "Bar" : n;
+	          	var result = div_by_3_and_5(n) === 0 ?  "FooBar" : 
+								div_by_3(n) === 0 ? "Foo" : 
+								div_by_5(n) === 0 ? "Bar" : n;
 
 	          	//set css class based on result
 	          	var highlight;
@@ -100,6 +106,7 @@ $(document).ready(function(){
   	//close the alert when OK button is clicked
   	closeX.on("click", function() {
     	alert.hide();
+		fbInput.focus();
   	});
   
   	// When the user clicks anywhere outside of the alert, close it
@@ -110,15 +117,18 @@ $(document).ready(function(){
   	});
 
   	//handle if the enter key is used instead of clicking
-	fbInput.on("keyup", function(e) {
-		if (e.which === 13) {
-			e.preventDefault();
-			subButton.trigger("click");
+  	$(document).on("keyup", function(event) {
+		if (fbInput.val() === "") {                
+			container.empty();
 		}
-
-		//if after any other keyup the input is blank, empty the container
-    	if (fbInput.val() === "") {
-      		container.empty();
-    	}
-	});
+    	if (event.which === 13) {
+      		event.preventDefault();
+      		fbInput.blur();
+      		if (event.target == fbInput[0]) {
+          		subButton.trigger("click");
+      		} else {
+          		closeX.trigger("click");   
+      		}
+    	}  
+  	});
 });
