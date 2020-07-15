@@ -51,10 +51,9 @@ $(document).ready(function(){
 	    var listNumber = fbInput.val();
 	     
 		//if there is no number or it is less than or equal to zero, clear the container and input
-	    if (listNumber === "0" || 
-			listNumber < "0" ||
-			listNumber === "" || 
-			isNaN(listNumber)) { 
+	    if (listNumber <= "0" ||  
+			isNaN(listNumber) ||
+	       		parseInt(listNumber) != parseFloat(listNumber)) {  
 	    	container.empty();
 	        fbInput.val("");
 	        $(this).blur();
