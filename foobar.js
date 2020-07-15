@@ -50,7 +50,7 @@ $(document).ready(function(){
 	    //get number from the input box
 	    var listNumber = fbInput.val();
 	     
-		//if there is no number or it is less than or equal to zero, clear the container and input
+		//if there is no whole number or it is less than or equal to zero, clear the container and input
 	    if (listNumber <= "0" ||  
 			isNaN(listNumber) ||
 	       		parseInt(listNumber) != parseFloat(listNumber)) {  
